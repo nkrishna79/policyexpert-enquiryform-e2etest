@@ -1,0 +1,32 @@
+{
+  "name": "policyexpert-enquiryform-e2etest",
+  "version": "1.0.0",
+  "description": "E2E Test Framework for PolicyExpert Enquiry Form",
+  "main": "index.js",
+  "scripts": {
+    "cypress:open": "npx cypress open"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nkrishna79/policyexpert-enquiryform-e2etest.git"
+  },
+  "cypress-cucumber-preprocessor": {
+    "nonGlobalStepDefinitions": false
+  },
+  "keywords": [
+    "cypress",
+    "E2E",
+    "Test"
+  ],
+  "author": "krish",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nkrishna79/policyexpert-enquiryform-e2etest/issues"
+  },
+  "homepage": "https://github.com/nkrishna79/policyexpert-enquiryform-e2etest#readme",
+  "devDependencies": {
+    "chance": "^1.1.8",
+    "cypress": "^9.3.1",
+    "cypress-cucumber-preprocessor": "^4.3.1"
+  }
+}

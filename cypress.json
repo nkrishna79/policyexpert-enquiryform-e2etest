@@ -1,0 +1,4 @@
+{
+  "baseUrl": "https://insurance.policyexpert.co.uk",
+  "testFiles": "**/*.feature"
+}
