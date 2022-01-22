@@ -1,4 +1,4 @@
-Feature: As a new user
+Feature: Policy Expert Enquiry Form
   I would like to get some quotes from policy expert
   so that I can make an informed decision
 
