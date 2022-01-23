@@ -15,12 +15,23 @@
 
 // Import commands.js using ES2015 syntax:
 import './commands'
-import './aboutyousection'
+import './enquiryformhelper'
 // Alternatively you can use CommonJS syntax:
 // require('./commands')
 // index.js
-const customCommands = require('./commands.js')
 
-module.exports = {
-    commands: customCommands
+module.exports = (on, config) => {
+    on('before:browser:launch', (browser = {}, launchOptions) => {
+        if (browser.family === 'chromium' && browser.name !== 'electron') {
+            launchOptions.args.push('--start-fullscreen')
+
+            return launchOptions
+        }
+
+        if (browser.name === 'electron') {
+            launchOptions.preferences.fullscreen = true
+
+            return launchOptions
+        }
+    })
 }

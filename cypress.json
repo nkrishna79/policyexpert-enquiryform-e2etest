@@ -1,5 +1,8 @@
 {
   "baseUrl": "https://insurance.policyexpert.co.uk",
   "testFiles": "**/*.feature",
-  "experimentalStudio": true
+  "experimentalStudio": true,
+  "viewportHeight": 920,
+  "viewportWidth": 1080
+
 }
