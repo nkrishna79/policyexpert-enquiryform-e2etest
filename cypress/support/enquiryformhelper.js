@@ -9,11 +9,11 @@ class Enquiryformhelper {
         return cy.get(selector);
     }
 
-    static selectDropDownByText(selector,byText) {
-        cy.get(selector).select(byText);
+    static selectDropDownByText(selector, byText) {
+       return cy.get(selector).select(byText);
     }
 
-    static selectSimilarDropDownByText(index,byText){
+    static selectSimilarDropDownByText(index, byText) {
         cy.get('[data-di-id="di-id-a0153183-959eb14e"]').eq(index).select(byText);
     }
 
@@ -51,8 +51,12 @@ class Enquiryformhelper {
         cy.get('[data-testid="question"]').eq(index);
     }
 
-    static enterPropertyBuiltYear(){
+    static enterPropertyBuiltYear() {
         return cy.get('div[class=\'row question-row-approximately-in-whi\'] input[type=\'text\']');
+    }
+
+    static clickButton(selector){
+        return cy.get(selector);
     }
 
     static completeAboutyouSection() {
@@ -96,6 +100,35 @@ class Enquiryformhelper {
         this.clickYesInYesNoToggleWithIndex().eq(7).click();
         this.clickYesInYesNoToggleWithIndex().eq(8).click();
         this.clickYesInYesNoToggleWithIndex().eq(9).click();
+    }
+
+    static completeQuestionsAboutProperty() {
+        this.clickNoInYesNoToggleWithIndex().eq(10).click();
+    }
+
+    static completeAboutSafetyAndSecurity() {
+        for (let j = 11; j <= 15; j++) {
+            this.clickNoInYesNoToggleWithIndex().eq(j).click();
+        }
+    }
+
+    static completeAboutJointPolicyHolders(){
+        this.clickNoInYesNoToggleWithIndex().eq(16).click();
+    }
+
+    static completeAboutYourInsuranceHistory(){
+        this.selectDropDownByText('[data-di-id="di-id-4225a61d-746337f5"]','5 years');
+        this.clickNoInYesNoToggleWithIndex().eq(17).click();
+    }
+    static completeAboutTheCoverYouWant(typeOfInsurance){
+        this.clickButton('[data-di-id="di-id-922d0104-5fb4c3c"]').click().wait(1000);
+        this.selectDropDownByText('[data-di-id="di-id-75bb769d-392c2bf8"]',typeOfInsurance).wait(1000);
+        cy.get('.question-currency > .row > .col-xs-10 > .questionset-input > .form-control').type('450000');
+        this.clickNoInYesNoToggleWithIndex().eq(18).click().wait(1000);
+        this.clickButton('[data-di-id="di-id-8afc63a7-78afb62d"]').click().wait(5000);
+    }
+    static verifyUserRedirectedToQuotes(){
+        cy.url().should('contain','summary');
     }
 }
 
