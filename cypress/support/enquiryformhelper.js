@@ -10,7 +10,7 @@ class Enquiryformhelper {
     }
 
     static selectDropDownByText(selector, byText) {
-       return cy.get(selector).select(byText);
+        return cy.get(selector).select(byText);
     }
 
     static selectSimilarDropDownByText(index, byText) {
@@ -55,7 +55,7 @@ class Enquiryformhelper {
         return cy.get('div[class=\'row question-row-approximately-in-whi\'] input[type=\'text\']');
     }
 
-    static clickButton(selector){
+    static clickButton(selector) {
         return cy.get(selector);
     }
 
@@ -112,23 +112,25 @@ class Enquiryformhelper {
         }
     }
 
-    static completeAboutJointPolicyHolders(){
+    static completeAboutJointPolicyHolders() {
         this.clickNoInYesNoToggleWithIndex().eq(16).click();
     }
 
-    static completeAboutYourInsuranceHistory(){
-        this.selectDropDownByText('[data-di-id="di-id-4225a61d-746337f5"]','5 years');
+    static completeAboutYourInsuranceHistory() {
+        this.selectDropDownByText('[data-di-id="di-id-4225a61d-746337f5"]', '5 years');
         this.clickNoInYesNoToggleWithIndex().eq(17).click();
     }
-    static completeAboutTheCoverYouWant(typeOfInsurance){
+
+    static completeAboutTheCoverYouWant(typeOfInsurance) {
         this.clickButton('[data-di-id="di-id-922d0104-5fb4c3c"]').click().wait(1000);
-        this.selectDropDownByText('[data-di-id="di-id-75bb769d-392c2bf8"]',typeOfInsurance).wait(1000);
+        this.selectDropDownByText('[data-di-id="di-id-75bb769d-392c2bf8"]', typeOfInsurance).wait(1000);
         cy.get('.question-currency > .row > .col-xs-10 > .questionset-input > .form-control').type('450000');
         this.clickNoInYesNoToggleWithIndex().eq(18).click().wait(1000);
         this.clickButton('[data-di-id="di-id-8afc63a7-78afb62d"]').click().wait(5000);
     }
-    static verifyUserRedirectedToQuotes(){
-        cy.url().should('contain','summary');
+
+    static verifyUserRedirectedToQuotes() {
+        cy.url().should('contain', 'summary');
     }
 }
 

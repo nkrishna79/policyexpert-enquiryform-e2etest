@@ -7,7 +7,7 @@ Before(() => {
 Given(/^I access policyexperts enquiry form$/, function () {
     Enquiryformhelper.verifyElementVisible('#logo-default').should('be.visible');
 });
-When(/^I submit the details section to get a quote for "([^"]*)"$/, (typeOfInsurance) =>{
+When(/^I submit the details section to get a quote for "([^"]*)"$/, (typeOfInsurance) => {
     Enquiryformhelper.completeAboutyouSection();
     Enquiryformhelper.completeAboutAndOtherResidentsSection();
     Enquiryformhelper.completeAboutYourPropertySection();
