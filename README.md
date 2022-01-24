@@ -51,25 +51,13 @@ define a repititive action that is used across the form filling process. So for 
 in the form we can use
 
 ```javascript
-  static
-enterTextInField(index)
+static enterTextInField(index)
 {
     return cy.get('[data-testid="question"]').eq(index);
 }
-And
-when
-filling in the
-sections in the
-form
-we
-can
-use
-the
-above
-
-function multiple
-
-times
+````
+And when filling in the form we re-use the above function as like below : 
+```javascript
 this.enterTextInField(1).type(firstname);
 this.enterTextInField(2).type(lastname);
 ```
