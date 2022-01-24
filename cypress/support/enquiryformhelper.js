@@ -63,6 +63,10 @@ class Enquiryformhelper {
         return cy.get(selector);
     }
 
+    static returnErrorMessage(){
+        return cy.get('[data-testid="error"]');
+    }
+
     static completeAboutyouSection() {
         this.selectDropDownByText('[data-di-id="di-id-f0e5ef83-5894a860"]', 'Mr');
         let firstname = chance.first({nationality: 'en'});
@@ -147,6 +151,16 @@ class Enquiryformhelper {
             this.clickHelpMenu().eq(i).click();
             this.clickHelpMenu().eq(i).should('be.visible');
         }
+    }
+    static verifyFistNameFieldValidation(){
+        let firstname = chance.first({nationality: 'en'});
+        let lastname = chance.last({nationality: 'en'});
+        this.enterTextInField(1).type(firstname);
+        this.enterTextInField(1).clear();
+        this.enterTextInField(2).type(lastname);
+    }
+    static verifyValidationErrorMessageIsDisplayed(){
+        this.returnErrorMessage().should('be.visible');
     }
 }
 

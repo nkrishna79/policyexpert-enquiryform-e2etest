@@ -26,3 +26,9 @@ When(/^I click on the help menu$/, function () {
 Then(/^I should see a help message$/, function () {
     Enquiryformhelper.clickFieldHelperMenuAndVerify();
 });
+When(/^I miss to enter data in the field$/, function () {
+    Enquiryformhelper.verifyFistNameFieldValidation();
+});
+Then(/^I should see the field validation message$/, function () {
+    Enquiryformhelper.verifyValidationErrorMessageIsDisplayed();
+});
