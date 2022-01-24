@@ -4,7 +4,7 @@ import Enquiryformhelper from '../enquiryformhelper';
 Before(() => {
     cy.visit("/home").wait(5000);
 });
-Given("I access policyexperts enquiry form", () => {
+Given(/^I access policyexperts enquiry form$/, function () {
     Enquiryformhelper.verifyElementVisible('#logo-default').should('be.visible');
 });
 When(/^I submit the details section to get a quote for "([^"]*)"$/, (typeOfInsurance) =>{
@@ -17,6 +17,6 @@ When(/^I submit the details section to get a quote for "([^"]*)"$/, (typeOfInsur
     Enquiryformhelper.completeAboutYourInsuranceHistory();
     Enquiryformhelper.completeAboutTheCoverYouWant(typeOfInsurance);
 });
-Then("I should be taken to quotes section", () => {
+Then(/^I should be taken to quotes section$/, function () {
     Enquiryformhelper.verifyUserRedirectedToQuotes();
 });
