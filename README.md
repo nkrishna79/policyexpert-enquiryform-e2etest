@@ -84,13 +84,7 @@ This will open cypress test runner and you will be able to see the feature file.
 you can use a terminal and you can run the test by specifying the following command directly
 
 ```javascript
-npx
-cypress - tags
-run--
-headed--
-browser
-chrome - e
-TAGS = @getquotes
+npx cypress-tags run --headed --browser chrome -e TAGS = @getquotes
 ```
 
 ### Reporter
