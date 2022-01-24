@@ -6,8 +6,8 @@ Feature: Policy Expert Enquiry Form
   Background:
     Given I access policyexperts enquiry form
 
-  @getquotes
-  Scenario Outline: Get Quotes
+@getquotes
+Scenario Outline: Get Quotes
     When I submit the details section to get a quote for "<TypeOfHomeInsurancedneeded>"
     Then I should be taken to quotes section
 
@@ -15,3 +15,7 @@ Feature: Policy Expert Enquiry Form
       | TypeOfHomeInsurancedneeded |
       | Buildings only             |
 
+  @helperMenu
+  Scenario: Verify helper popup
+    When I click on the help menu
+    Then I should see a help message

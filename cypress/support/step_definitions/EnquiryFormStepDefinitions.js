@@ -20,3 +20,9 @@ When(/^I submit the details section to get a quote for "([^"]*)"$/, (typeOfInsur
 Then(/^I should be taken to quotes section$/, function () {
     Enquiryformhelper.verifyUserRedirectedToQuotes();
 });
+When(/^I click on the help menu$/, function () {
+    Enquiryformhelper.clickFieldHelperMenu();
+});
+Then(/^I should see a help message$/, function () {
+    Enquiryformhelper.clickFieldHelperMenuAndVerify();
+});

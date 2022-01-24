@@ -25,6 +25,10 @@ class Enquiryformhelper {
         return cy.get('[data-testid="lookup"]');
     }
 
+    static clickHelpMenu() {
+        return cy.get('[data-testid="display-help"]');
+    }
+
     static randomDateSelector(date, month, year) {
         cy.get('[data-di-id="di-id-f5140814-d1fc937c"]').select(date).wait(1000);
         cy.get('[data-di-id="di-id-11487cee-aa246c0b"]').select(month).wait(1000);
@@ -131,6 +135,18 @@ class Enquiryformhelper {
 
     static verifyUserRedirectedToQuotes() {
         cy.url().should('contain', 'summary');
+    }
+
+    static clickFieldHelperMenu() {
+        for (let i = 0; i <= 5;i++) {
+            this.clickHelpMenu().eq(i).click();
+        }
+    }
+    static clickFieldHelperMenuAndVerify(){
+        for (let i = 0; i <= 5;i++) {
+            this.clickHelpMenu().eq(i).click();
+            this.clickHelpMenu().eq(i).should('be.visible');
+        }
     }
 }
 
