@@ -1,0 +1,40 @@
+{
+  "name": "policyexpert-enquiryform-e2etest",
+  "version": "1.0.0",
+  "description": "E2E Test Framework for PolicyExpert Enquiry Form",
+  "main": "index.js",
+  "scripts": {
+    "cypress:open": "npx cypress open",
+    "html:report": "node multiple-cucumber-html-reporter.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nkrishna79/policyexpert-enquiryform-e2etest.git"
+  },
+  "cypress-cucumber-preprocessor": {
+    "cucumberJson": {
+      "generate": true,
+      "outputFolder": "cypress/cucumber-json",
+      "filePrefix": "",
+      "fileSuffix": ".cucumber"
+    }
+  },
+  "keywords": [
+    "cypress",
+    "E2E",
+    "Test"
+  ],
+  "author": "krish",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nkrishna79/policyexpert-enquiryform-e2etest/issues"
+  },
+  "homepage": "https://github.com/nkrishna79/policyexpert-enquiryform-e2etest#readme",
+  "devDependencies": {
+    "chance": "^1.1.8",
+    "cypress": "^9.3.1",
+    "cypress-cucumber-preprocessor": "^4.3.1",
+    "cypress-xpath": "^1.6.2",
+    "multiple-cucumber-html-reporter": "^1.18.3"
+  }
+}
